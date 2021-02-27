@@ -61,7 +61,8 @@ div#placeholder{
 
 }
 
-#text input:focus ~ #placeholder
+#text input:focus ~ #placeholder,
+#text input:valid ~ #placeholder
 {
     top: -50px;
     font-size: 10px;
@@ -102,6 +103,10 @@ button#rolar{
 #rolar input:active ~ #dado{
     width: 120px;
     height: 120px;
+}
+
+#rolar:hover{
+    cursor: pointer;
 }
 
 
