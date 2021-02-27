@@ -68,7 +68,7 @@ div#placeholder{
 }
 
 div#dado{
-    display: block;
+    display: flex;
     margin: 71px auto;
     background-color: #46468A;
     width: 154px;
@@ -76,13 +76,14 @@ div#dado{
     border-radius: 25px;
     color: #FFFFFF;
     transition: 0.5s linear;
-    
+    justify-content: center;
+    align-items:center;
 }
 
 #dado p{
+    display: flex;
     font-size: 60px;
     font-weight: 600;
-    align-items:;
 }
 
 button#rolar{
