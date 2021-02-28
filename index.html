@@ -35,18 +35,32 @@
                  var numAleatorio = Math.floor(Math.random() * num + 1);
                  return numAleatorio;
             }
-            
-            //Função responsável pelo resultado do dado
+
+            //Função para "animação" dos numeros do dado ao rolar
+            function animacao(qtLados){
+                var contador = 7
+                setInterval(function(){
+                    if(contador > 0){
+                        num = gerarAleatorio(qtLados)
+                        resDado.innerText = num
+                        contador--;
+                    }else if(contador == 0){
+                        resDado.innerText = num
+                    }
+                },150)
+            }
+            //Função responsável pelo clique no botão rolar
             function rolar(){
                 var qtLados = Number(txtLados.value)
-                var randomNum = gerarAleatorio(qtLados); 
-                
-                if(qtLados < 2){
+
+                if(qtLados == ""){
+                    window.alert("Digite algo")
+                }else if(qtLados < 2){
                     window.alert("Você é maior que esse número 0. Tenho certeza")
                 }else if(qtLados > 100){
                     window.alert("Convenhamos, você não precisa de mais que 100 lados pra descobrir que vai se dar mal")
                 }else{
-                    resDado.innerText = randomNum
+                    animacao(qtLados);
                 }
             }
 
