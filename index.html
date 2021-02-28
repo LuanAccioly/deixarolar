@@ -30,9 +30,16 @@
             var resDado = document.getElementById('resDado');
             parseInt(txtqtLados);
 
+            //Função para gerar números aleatórios
+            function gerarAleatorio(num){
+                 var numAleatorio = Math.floor(Math.random() * num + 1);
+                 return numAleatorio;
+            }
+            
+            //Função responsável pelo resultado do dado
             function rolar(){
                 var qtLados = Number(txtLados.value)
-                var randomNum = Math.floor(Math.random() * qtLados + 1) 
+                var randomNum = gerarAleatorio(qtLados); 
                 
                 if(qtLados < 2){
                     window.alert("Você é maior que esse número 0. Tenho certeza")
@@ -41,7 +48,6 @@
                 }else{
                     resDado.innerText = randomNum
                 }
-
             }
 
             
