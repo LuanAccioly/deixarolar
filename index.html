@@ -32,13 +32,20 @@
             var txtLados = document.getElementById('txtQtLados');
             var resDado = document.getElementById('resDado');
             var msgAlerta = document.getElementById('msg');
-            parseInt(txtqtLados);
-
+            //esse parseInt tá com algum problema, Rodrig0y. diz no console "not defined". 
+            //parseInt(txtqtLados);
             
+            //garantindo que a tecla ENTER sirva como botão Rolar! 
+            document.querySelector('body').addEventListener('keydown', function(event){
+                var tecla = event.keyCode;
+
+                //tecla 13 == ENTER
+                if(tecla == 13){ rolar() }
+            })
 
             //Função para gerar números aleatórios
-            function gerarAleatorio(num){
-                 var numAleatorio = Math.floor(Math.random() * num + 1);
+            function gerarAleatorio(numMaximo){
+                 var numAleatorio = Math.floor(Math.random() * numMaximo + 1);
                  return numAleatorio;
             }
 
@@ -60,7 +67,7 @@
                 msgAlerta.innerText = mensagem;
                 setTimeout(function(){
                     msgAlerta.innerText = ""
-                },3000)
+                },3500)
             }
             //Função responsável pelo clique no botão rolar
             function rolar(){
@@ -69,7 +76,7 @@
                 if(qtLados == ""){
                     alerta("Digite algo");
                 }else if(qtLados < 2){
-                    alerta("Você é maior que esse número 0. Tenho certeza");
+                    alerta("Você é maior que esse número. Tenho certeza");
                 }else if(qtLados > 100){
                     alerta("Convenhamos, você não precisa de mais que 100 lados pra descobrir que vai se dar mal");
                 }else{
