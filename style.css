@@ -23,6 +23,14 @@ div#divPrincipal{
     max-width: 240px;
     height: auto;
     text-align: center;
+    transition: 1s ; /*so conta no inicio da transação. o FIm fica seco*/
+}
+
+p#msg{
+    color: #E94560;
+    font-size: 20px;
+    font-weight: 600;
+    transition: 5s linear;
 }
 
 h1#deixaRolar{
