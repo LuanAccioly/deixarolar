@@ -49,6 +49,11 @@ div#text{
     padding: 14px 60px 12px 2px;
 }
 
+input::-webkit-inner-spin-button
+{
+    -webkit-appearance: none;
+}
+
 div#placeholder{
     text-transform: uppercase;
     font-size: 14px;
@@ -101,12 +106,17 @@ button#rolar{
     font-size: 27px;
     font-weight: 600;
     color: #FFFFFF;
-    transition: 0.25s linear;
+    transition: 0.25s;
 }
 
 #rolar:hover{
     cursor: pointer;
     background-color:#41a785;
+}
+
+#rolar:active{
+    background: #245c49;
+    color: #FFFFFF;
 }
 
 
