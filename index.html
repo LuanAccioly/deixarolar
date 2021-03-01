@@ -26,12 +26,11 @@
 
         <button id="rolar" onclick="rolar()">Rolar!</button>
 
-
-
         <script>
             var txtLados = document.getElementById('txtQtLados');
             var resDado = document.getElementById('resDado');
             var msgAlerta = document.getElementById('msg');
+            var dado = document.getElementById('dado');
             //esse parseInt tá com algum problema, Rodrig0y. diz no console "not defined". 
             //parseInt(txtqtLados);
             
@@ -48,10 +47,9 @@
                  var numAleatorio = Math.floor(Math.random() * numMaximo + 1);
                  return numAleatorio;
             }
-
             //Função para "animação" dos numeros do dado ao rolar
-            function animacao(qtLados){
-                var contador = 7
+            function animacaoNumeros(qtLados){
+                var contador = 10;
                 setInterval(function(){
                     if(contador > 0){
                         num = gerarAleatorio(qtLados)
@@ -61,6 +59,7 @@
                         resDado.innerText = num
                     }
                 },150)
+                
             }
             //Função pra mostrar alerta e na tela e depois retirar 
             function alerta(mensagem){
@@ -80,7 +79,7 @@
                 }else if(qtLados > 100){
                     alerta("Convenhamos, você não precisa de mais que 100 lados pra descobrir que vai se dar mal");
                 }else{
-                    animacao(qtLados);
+                    animacaoNumeros(qtLados);
                 }
             }
 
