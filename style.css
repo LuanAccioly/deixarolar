@@ -92,7 +92,7 @@ div#dado{
     height: 154px;
     border-radius: 25px;
     color: #FFFFFF;
-    transition: 0.5s linear;
+    transition: 0.25s ;
     justify-content: center;
     align-items:center;
 }
@@ -101,6 +101,7 @@ div#dado{
     display: flex;
     font-size: 60px;
     font-weight: 600;
+    transition: 0.25s
 }
 
 button#rolar{

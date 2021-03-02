@@ -31,9 +31,6 @@
             var resDado = document.getElementById('resDado');
             var msgAlerta = document.getElementById('msg');
             var dado = document.getElementById('dado');
-            console.log(txtLados)
-            
-            
             
             //garantindo que a tecla ENTER sirva como botão Rolar! 
             document.querySelector('body').addEventListener('keydown', function(event){
@@ -48,32 +45,26 @@
             }
             //Função para "animação" dos numeros do dado ao rolar
             
-            function animacaoNumeros(qtLados){
+            function animacao(qtLados){
                 var contador = 10;
-                setInterval(
+                var animacaoNumeros = setInterval(
                     function(){
                         if(contador > 0){                    
                             num = gerarAleatorio(qtLados)
-                            console.log("IF")
                             resDado.innerText = num
                             contador--;
                             dado.style.width = "100px"
-                            dado.style.height = "100px"  
+                            dado.style.height = "100px"
+                            resDado.style.fontSize = "40px"  
+                            
                         }else{												
-                            console.log("ELSE") 
-                            console.log(contador)                                               
                             resDado.innerText = num
                             dado.style.width = "154px"
-                            dado.style.height = "154px"	
-                            
-                                    
+                            dado.style.height = "154px"
+                            resDado.style.fontSize = "60px"  	
+                            clearInterval(animacaoNumeros)
                         }
-                            
                 },150)// numero em ms da ação
-                
-            //Temos que usar essa função para pausar o setInterval "clearInterval()"
-
-                
             }
             //Função pra mostrar alerta e na tela e depois retirar 
             function alerta(mensagem){
@@ -90,14 +81,14 @@
                 if(isNaN(qtLados)){
                     alerta("Digite algo");
                 }else if(!(qtLados % 1 === 0)){
+                    txtLados.value = ""
                     alerta("Números quebrados n bro :(")
                 }else if(qtLados < 2){
                     alerta("Você é maior que esse número. Tenho certeza");
                 }else if(qtLados > 100){
                     alerta("Convenhamos, você não precisa de mais que 100 lados pra descobrir que vai se dar mal");
                 }else{
-                    animacaoNumeros(qtLados);
-                    console.log(qtLados);
+                    animacao(qtLados);
                 }
             }
 
