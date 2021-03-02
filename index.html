@@ -31,8 +31,9 @@
             var resDado = document.getElementById('resDado');
             var msgAlerta = document.getElementById('msg');
             var dado = document.getElementById('dado');
+            console.log(txtLados)
             //esse parseInt tá com algum problema, Rodrig0y. diz no console "not defined". 
-            //parseInt(txtqtLados);
+            
             
             //garantindo que a tecla ENTER sirva como botão Rolar! 
             document.querySelector('body').addEventListener('keydown', function(event){
@@ -55,7 +56,11 @@
                         num = gerarAleatorio(qtLados)
                         resDado.innerText = num
                         contador--;
+                        dado.style.width = "100px"
+                        dado.style.height = "100px"
                     }else if(contador == 0){
+                        dado.style.width = "154px"
+                        dado.style.height = "154px"
                         resDado.innerText = num
                     }
                 },150)
@@ -70,7 +75,7 @@
             }
             //Função responsável pelo clique no botão rolar
             function rolar(){
-                var qtLados = Number(txtLados.value)
+                var qtLados = parseInt(txtLados.value)
 
                 if(qtLados == ""){
                     alerta("Digite algo");
