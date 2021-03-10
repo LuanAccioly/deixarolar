@@ -9,7 +9,7 @@
 }
 
 body{
-    background: #24243D url("background.png") no-repeat right top fixed ;
+    background: #24243D url("../Imagens/background.png") no-repeat right top fixed ;
     background-size: cover;
     min-height: 100vh;
     height: -50px;
