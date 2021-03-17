@@ -12,7 +12,7 @@ Um site de emulação de rolagem de dados voltado para partidas de RPG.
 - [x] Mensagens de alerta ao tentar rodar um dado com numero de lados maior que 100 ou menor que 2
 
 ## ⏩ Resultado
-https://deixarolar.000webhostapp.com/
+https://deixarolar.vercel.app/
 <h1>
     <img src="Imagens/result.gif">
 </h1>
