@@ -74,19 +74,19 @@
             function rolar(){
                 var a = new Audio('Sons/deixarolaraudio.mp3')
                 a.volume = 0.3 
-                a.play()
                 var qtLados = txtLados.value
 
                 if(isNaN(qtLados)){
                     alerta("Digite algo");
                 }else if(!(qtLados % 1 === 0)){
                     txtLados.value = ""
-                    alerta("Números quebrados n bro :(")
+                    alerta("Números quebrados não, bro :(")
                 }else if(qtLados < 2){
                     alerta("Você é maior que esse número. Tenho certeza");
                 }else if(qtLados > 100){
                     alerta("Convenhamos, você não precisa de mais que 100 lados pra descobrir que vai se dar mal");
                 }else{
+                    a.play()
                     animacao(qtLados);
                 }
             }
