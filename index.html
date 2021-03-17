@@ -72,7 +72,9 @@
             }
             //Função responsável pelo clique no botão rolar
             function rolar(){
-                new Audio('Sons/deixarolaraudio.mp3').play()
+                var a = new Audio('Sons/deixarolaraudio.mp3')
+                a.volume = 0.3 
+                a.play()
                 var qtLados = txtLados.value
 
                 if(isNaN(qtLados)){
